@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 322867200}
   - component: {fileID: 322867199}
   - component: {fileID: 322867201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 1309702524}
   - component: {fileID: 1309702525}
   - component: {fileID: 1309702526}
+  - component: {fileID: 1309702527}
   m_Layer: 0
   m_Name: jogador-idle-000
   m_TagString: Untagged
@@ -337,7 +338,8 @@ Transform:
   m_LocalPosition: {x: -2.76, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1742624341}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1309702524
@@ -390,7 +392,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -415,6 +417,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeDoJogador: 5
+  estaNoChao: 0
+  alturaDoPulo: 20
+  tamanhoDoVerificadorDeChao: 0.5
+  verificadorDeChao: {fileID: 1742624341}
+  camadaDoChao:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!95 &1309702527
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309702521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9c11dac87e48bbc08d83bcb62aa53be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1590805141
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +536,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742624340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742624341}
+  m_Layer: 0
+  m_Name: verificadorDeChao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742624341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742624340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.531, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1309702523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
