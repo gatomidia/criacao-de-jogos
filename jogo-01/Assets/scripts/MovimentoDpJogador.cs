@@ -18,6 +18,9 @@ public class MovimentoDpJogador : MonoBehaviour
     public Transform verificadorDeChao;
     public LayerMask camadaDoChao;
 
+    public float vidasDoJogador;
+    public bool jogadorEstaVivo;
+
     void Awake() {
         rigidbory2D = GetComponent<Rigidbody2D>();
         objAnimator = GetComponent<Animator>();
@@ -25,12 +28,16 @@ public class MovimentoDpJogador : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        vidasDoJogador = 4;
+        jogadorEstaVivo = true;
     }
 
     // Update is called once per frame
     void Update() {
-        MovimentarJogador();
-        PuloDoJogador();
+        if(vidasDoJogador > 0 ) {
+            MovimentarJogador();
+            PuloDoJogador();
+        }
     }
 
     private void PuloDoJogador() {
