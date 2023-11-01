@@ -11,6 +11,8 @@ public class Coletaveis : MonoBehaviour
     {
         // 1. Identificar que o jogador colideu com este objeto
         if(outroObjeto.gameObject.CompareTag("Player")){
+
+            SFXManager.referencia.somDaColeta.Play();
             // 3. Criar o objeto de explosao
             Instantiate(efeitoDaExplosao, transform.position, transform.rotation);
             

@@ -30,7 +30,7 @@ public class VidaDoJogador : MonoBehaviour
 
 
         // FindObjectOfType<MovimentoDpJogador>().jogadorEstaVivo = false;
-
+        SFXManager.referencia.somDoDano.Play();
         rigidbory2D.velocity = new Vector2(0f, 0f);
     }
 

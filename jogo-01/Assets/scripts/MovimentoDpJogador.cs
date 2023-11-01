@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovimentoDpJogador : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class MovimentoDpJogador : MonoBehaviour
         if(vidasDoJogador > 0 ) {
             MovimentarJogador();
             PuloDoJogador();
+        } else {
+            // Reinciar jogo
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -47,6 +51,7 @@ public class MovimentoDpJogador : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")) {
             if(jogadorEstaTocandoNoChao == true) {
+                SFXManager.referencia.somDoPulo.Play();
                 rigidbory2D.AddForce(new Vector2(0f, alturaDoPulo), ForceMode2D.Impulse);
             }
         }
